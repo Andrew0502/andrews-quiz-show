@@ -3,7 +3,7 @@ const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById ("question-container");
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById("answer-buttons");
-
+const timerEl = document.getElementById("timer");
 
 
 let currentQuestionIndex;
@@ -24,6 +24,7 @@ function startGame() {
     currentQuestionIndex = 0; //
     questionContainerElement.classList.remove("hide");
     setNextQuestion();
+    setTime();
 
 
     
@@ -69,22 +70,23 @@ function selectAnswer(e){
     const isCorrect = selectedButton.correct; // variable recording if the button we selected is correct or not.
     setStatusClass(document.body, isCorrect); // refers to the class that changes between red and green.
     Array.from(answerButtonsElement.children).forEach(function(button) { // takes the answersButtonElement.children, an iterable object, and turn it to a array. 
-        setStatusClass(button, button.correct);
+        setStatusClass(button, button.correct); // Activates the seStatusClass function and sends the button that was selected and the parameter checking if it is correct.
     })
-    if (questions.length > currentQuestionIndex + 1){
-    //    nextButton.classList.remove('hide'); 
-            currentQuestionIndex++
-            setNextQuestion();
-    } else {
-        startButton.innerText = 'Restart';
-        startButton.classList.remove('hide');
+    if (questions.length > currentQuestionIndex + 1){ //If the total length of the questions array is greater than the question index + 1 do the operation to move to the next question.
+    //    nextButton.classList.remove('hide');  //unhide the next button.
+            // For( i = 0; questions.length; i++)
+            currentQuestionIndex++ // increase the number of the current question index but 1.
+            setNextQuestion(); // Activate the setNextQuestion function. 
+    } else { // if the currentQuestionIndex number is greater than or equal to the total length of the array then do this to restart the quiz.
+        startButton.innerText = 'Restart'; // changed the start button to the reset button.
+        startButton.classList.remove('hide'); // unhide the start button
     }
     
 }
 
 
 
-function setStatusClass(element, isCorrect){
+function setStatusClass(element, isCorrect){  //The function that determines if the answer is correct or false.
     clearStatusClass(element)
     if(isCorrect){
         element.classList.add("correct")
@@ -93,10 +95,27 @@ function setStatusClass(element, isCorrect){
     }
 }
 
-function clearStatusClass(element) {
+function clearStatusClass(element) { //resets the background and buttons when you move to the next question.
     element.classList.remove('correct');
     element.classList.remove('wrong');
 }
+
+
+function setTime() {
+    var timeLeft = 100;
+  
+    var timeInterval = setInterval(function() {
+      timerEl.textContent = timeLeft + " seconds remaining";
+      timeLeft--;
+  
+      if (timeLeft === 0) {
+        timerEl.textContent = "";
+        
+        clearInterval(timeInterval);
+      }
+  
+    }, 1000);
+  }
 
 const questions = [
     {
