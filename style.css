@@ -1,3 +1,10 @@
+.current-score-a{
+    align-content: center;
+    color: white;
+}
+
+
+
 #current-score{
     align-content: center;
     color: white;
@@ -16,13 +23,13 @@
 #start-btn{
     margin: 10px;
     padding: 10px;
-    display: flex;
+    width: 150px;
     justify-content: center;
 }
 
 #reset-btn{
     margin: 10px;
     padding: 10px;
-    display: flex;
+    width: 150px;
     justify-content: center;
 }

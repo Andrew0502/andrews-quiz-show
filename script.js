@@ -5,18 +5,27 @@ var answerOne = document.getElementById("answer-one");
 var answerTwo = document.getElementById("answer-two");
 var answerThree = document.getElementById("answer-three");
 var answerFour = document.getElementById("answer-four");
-var startButton = document.getElementById("start-Btn");
+var startButton = document.getElementById("start-btn");
 var resetButton = document.getElementById("reset-btn");
 
 let currentQuestionIndex;
 
-startButton.addEventListener("click", startQuiz);
+startButton.addEventListener("click", startQuiz());
 
 function startQuiz() {
     startButton.classList.add("hide");
     currentQuestionIndex = 0;
-
+    answerOne.classList.remove("hide");
+    answerTwo.classList.remove("hide");
+    answerThree.classList.remove("hide");
+    answerFour.classList.remove("hide");
+    setNextQuestion(); // a function to set the questions in the place of the placeholders
+    setTime(); // set the timer running.
 }
+
+function setNextQuestion();
+
+
 
 
 const questions = [
