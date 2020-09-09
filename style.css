@@ -2,3 +2,27 @@
     align-content: center;
     color: white;
 }
+
+/* .hide{
+    display: none;
+} */
+
+.answer-btn{
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+}
+
+#start-btn{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#reset-btn{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}

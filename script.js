@@ -1,25 +1,68 @@
-// This document will create a quiz game to practice 
-// 1. create a landing page.
-// 2. nav bar at top.
-// 3. high score on the left
-// 4. current score in the middle.
-// 5. timer on the right ~60 seconds. unhidden, but doesnt start until you click the start button
-// 6. div card area, centered, with bold question text.
-// 7. 4 answers, perhaps bring in the answer arrays?
-// 8.    container          
-//     <div id = answer 1> "start quiz button in this instance         
-//     <div id = answer 2> hidden         
-//     <div id = answer 3> hidden         
-//     <div id = answer 4> hidden         
-//     container     
+var highScoreEl = document.getElementById("high-score");
+var currentScoreEl = document.getElementById("current-score");
+var timerEl = document.getElementById("timer");
+var answerOne = document.getElementById("answer-one");
+var answerTwo = document.getElementById("answer-two");
+var answerThree = document.getElementById("answer-three");
+var answerFour = document.getElementById("answer-four");
+var startButton = document.getElementById("start-Btn");
+var resetButton = document.getElementById("reset-btn");
 
-// h1> - Coding Quiz Challenge         
-// <h2> - "try and take this quiz blah blah."         
-//         
-//     <div = line> hidden        
-//      <h2>         hidden       
-//     Timer already exists at the top right hand side, but hasn't been started          
-//     Top left hand side is a high score link          
-//     Content saying there is a quiz here          
-//     a button to start      div     hidden line     answer - content  Step 2 Target ## TARGETS     id="timer" linked with countDownNumbDisp variable     
-//     id="timeStart" - button that clicks & begins quiz     id="subHeading" -
+let currentQuestionIndex;
+
+startButton.addEventListener("click", startQuiz);
+
+function startQuiz() {
+    startButton.classList.add("hide");
+    currentQuestionIndex = 0;
+
+}
+
+
+const questions = [
+    {
+        title: "Commonly used data types DO NOT include:", // key
+        answers: [ // value, array
+            {text: "strings", correct: false}, //objects
+            {text: "booleans", correct: false},
+            {text: "alerts", correct: true},
+            {text: "numbers", correct: false}
+        ]
+    },
+    {
+        title: 'The condition in an if/else statement is enclosed within____.',
+        answers: [
+          { text: 'quotes', correct: false },
+          { text: 'curly brackets', correct: false},
+          { text: 'parentheses', correct: true },
+          { text: 'square brackets', correct: false }
+        ]
+      },
+      {
+        title: 'Arrays in JavaScript can be used to store _____. ',
+        answers: [
+          { text: 'numbers and strings', correct: false },
+          { text: 'other arrays', correct: false },
+          { text: 'booleans', correct: false },
+          { text: 'All of the above!', correct: true }
+        ]
+      },
+      {
+        title: 'String values must be enclosed within _____ when being assigned to variables.',
+        answers: [
+          { text: 'commas', correct: false },
+          { text: 'curly brackets', correct: false},
+          { text: 'quotes', correct: true },
+          { text: 'parentheses', correct: false }
+        ]
+      },
+      {
+      title: 'A very useful tool used to during development and debugging for printing content to the debugger is:',
+        answers: [
+          { text: 'JavaScript', correct: false },
+          { text: 'terminal/bash', correct: false},
+          { text: 'for loops', correct: false },
+          { text: 'console.log()', correct: true}
+        ]
+      }
+]
