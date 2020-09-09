@@ -3,38 +3,35 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Quiz App</title>
+        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div  class = "container">
 
-            <div id = "question-container" class ="hide">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" id ="high-score">High Score:</a>
+            <a id = "current-score">Current Score:</a>
+            <form class="form-inline">
+                <a class="navbar-brand" id ="timer">Timer:</a>
+            </form>
+          </nav>
 
-                    <div id = "question">Question</div>
-                    
-                    <div id = "answer-buttons" class = "btn-grid">
-                        <button class = "btn"> Answer 1</button>
-                        <button class = "btn"> Answer 2</button>
-                        <button class = "btn"> Answer 3</button>
-                        <button class = "btn"> Answer 4</button>
-                        
-                    </div>
-                </div>
-                    <div class = "controls">
-                        <button id = "start-btn" class = "start-btn btn ">Start</button>
-                        <button id = "next-btn" class = "next-btn btn hide">Next</button>
+          <div class ="container"> 
+                <div class = "hide" id ="answer-one">Answer 1</div>
+                <div class = "hide" id ="answer-two">Answer 2</div>
+                <div class = "hide" id ="answer-three">Answer 3</div>
+                <div class = "hide" id ="answer-four">Answer 4</div>
 
-                    </div>
-                    
-                    <div id = "timer-container">
-                        <h2 id ="timer"></h2>
-                    </div>
 
-        </div>
-        
-        <script src="./Assets/script.js" async defer></script>
+
+
+
+          </div>
+
+        <script src="script.js" async defer></script>
     </body>
 </html>
