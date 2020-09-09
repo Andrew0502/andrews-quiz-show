@@ -10,7 +10,14 @@ var resetButton = document.getElementById("reset-btn");
 
 let currentQuestionIndex;
 
-startButton.addEventListener("click", startQuiz());
+// add event listeners for all of the answers
+startButton.addEventListener("click", startQuiz);
+answerOne.addEventListener("click", )
+answerTwo.addEventListener("click", )
+answerThree.addEventListener("click", )
+answerFour.addEventListener("click", )
+resetButton.addEventListener("click", )
+
 
 function startQuiz() {
     startButton.classList.add("hide");
@@ -23,9 +30,45 @@ function startQuiz() {
     setTime(); // set the timer running.
 }
 
-function setNextQuestion();
+
+function setTime() {
+  
+  timerEl.setAttribute("id", "timer-readout");
+  document.body.appendChild(timer);
+
+  timer.innerHTML = "BEGIN!";
+  myInterval = setInterval(() => {
+    gameDurationInSec--;
+
+    let minuteHand = Math.floor(gameDurationInSec / 60);
+    let secondHand = gameDurationInSec % 60;
+    if (secondHand < 10) {
+      secondHand = "0" + secondHand;
+    }
+
+    timer.innerHTML = `${minuteHand}:${secondHand}`;
+  
+    if (gameDurationInSec <= 0) {
+      gameOver();
+    }
+  }, 1000);
+}
 
 
+
+function setNextQuestion()
+  resetState()
+  showQuestion(questions[currentQuestionIndex]);
+
+function showQuestion(question){
+  questionElement.innerText = question.title;
+  for(i = 0; i <questions.answers.length; i++ ){}
+
+}
+
+function resetState(){
+  clearStatusClass(document.body)
+}
 
 
 const questions = [
