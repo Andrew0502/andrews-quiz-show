@@ -23,39 +23,32 @@ let questions = [
         correct : "C"
     },{
         question : "The condition in an if/else statement is enclosed within____.",
-        choiceA : "Wrong",
-        choiceB : "Correct",
-        choiceC : "Wrong",
-        choiceD : "",
+        choiceA : "quotes",
+        choiceB : "curly brackets",
+        choiceC : "parentheses",
+        choiceD : "square brackets",
+        correct : "C"
+    },{
+        question : "Arrays in JavaScript can be used to store _____.",
+        choiceA : "numbers and strings",
+        choiceB : "ALL of the above",
+        choiceC : "booleans",
+        choiceD : "other arrays",
         correct : "B"
     },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "",
-        correct : "C"
+        question : "String values must be enclosed within _____ when being assigned to variables.",
+        choiceA : "quotes",
+        choiceB : "curly brackets",
+        choiceC : "commas",
+        choiceD : "parentheses",
+        correct : "A"
     },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "",
-        correct : "C"
-    },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "",
-        correct : "C"
-    },{
-        question : "What does JS stand for?",
-        choiceA : "Wrong",
-        choiceB : "Wrong",
-        choiceC : "Correct",
-        choiceD : "",
-        correct : "C"
+        question : "A very useful tool used to during development and debugging for printing content to the debugger is:",
+        choiceA : "JavaScript",
+        choiceB : "terminal/bash",
+        choiceC : "for loops",
+        choiceD : "console.log()",
+        correct : "D"
     }
 ];
 
