@@ -1,0 +1,35 @@
+.current-score-a{
+    align-content: center;
+    color: white;
+}
+
+
+
+#current-score{
+    align-content: center;
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+.answer-btn{
+    margin: 10px;
+    padding: 10px;
+    align-content: center;
+}
+
+#start-btn{
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    justify-content: center;
+}
+
+#reset-btn{
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    justify-content: center;
+}
