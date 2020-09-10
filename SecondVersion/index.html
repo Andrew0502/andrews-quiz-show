@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" >High Score: <span id ="high-score">0</span></a>
+            <a class = "current-score-a" >Current Score: <span id = "current-score">0</span></a>
+            <form class="form-inline">
+                <a class="navbar-brand" >Timer: <span id ="timer">60</span></a>
+            </form>
+          </nav>
+
+          <div class ="container card"> 
+
+                <h3 id = "question-text">Question Text</h3>
+               
+                <button class = "btn btn-secondary answer-btn hide" type="button" id ="answer-one">Answer 1</button>
+                <button class = "btn btn-secondary answer-btn hide" type="button" id ="answer-two">Answer 2</button>
+                <button class = "btn btn-secondary answer-btn hide" type="button" id ="answer-three">Answer 3</button>
+                <button class = "btn btn-secondary answer-btn hide" type="button" id ="answer-four">Answer 4</button>
+
+                <div > 
+                    <button class="btn btn-primary" type="button" id = "start-btn">Start</button>
+                </div>
+
+                <div > 
+                    <button class="btn btn-primary hide" id = "reset-btn" type="button">Reset</button>
+                </div>
+
+            
+          </div>
+          <div class = "container card">
+                <button class = "btn btn-secondary" type ="button" id = "scoreboard">View Scoreboard!</button>
+
+          </div>
+
+        <script src="script.js" async defer></script>
+    </body>
+</html>
