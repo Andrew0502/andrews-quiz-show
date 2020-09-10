@@ -66,9 +66,7 @@ let score = 0;
 // render a question
 function renderQuestion(){
     let q = questions[runningQuestion];
-    
     question.innerHTML = "<p>"+ q.question +"</p>";
-    
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
@@ -156,14 +154,31 @@ function scoreRender(){
     
     // calculate the amount of question percent answered by the user
     const scorePerCent = Math.round(100 * score/questions.length);
-    
-    // choose the image based on the scorePerCent
-    let img = (scorePerCent >= 80) ? "img/5.png" :
-              (scorePerCent >= 60) ? "img/4.png" :
-              (scorePerCent >= 40) ? "img/3.png" :
-              (scorePerCent >= 20) ? "img/2.png" :
-              "img/1.png";
-    
-    scoreDiv.innerHTML = "<img src="+ img +">";
+    var resultsArray;
     scoreDiv.innerHTML += "<p>"+ scorePerCent +"%</p>";
+
+    //prompt
+    var userName = prompt("Game Over! please enter your name: ");
+    var storedScores = localStorage.getItem("resultsString");
+    if(storedScores === null){
+        resultsArray = [];
+    } else {
+        resultsArray = JSON.parse(storedScores);
+    }
+    var gameResult = { 
+        player: userName,
+        score: scorePerCent
+    };
+
+    resultsArray.push(gameResult);
+    localStorage.setItem("resultsString", JSON.stringify(resultsArray));
+    for(i = 0; i < resultsArray.length; i++){
+        var nameField = document.createElement("p");
+        nameField.textContent = resultsArray[i].player;
+        container.appendChild(nameField);
+
+        var scoreField = document.createElement("p");
+        scoreField.textContent = resultsArray[i].score;
+        container.appendChild(scoreField);
+    }
 }
